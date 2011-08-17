@@ -290,3 +290,5 @@ EOF
 if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
 endif
+
+autocmd BufWritePre *.yml,*.rst,*.py,*.java,*.js,*.html,*.c :%s/\s\+$//e

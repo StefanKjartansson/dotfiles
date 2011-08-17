@@ -172,3 +172,45 @@ export EDITOR=vim
 # Add git and svn branch names
 export PS1="$PS1\$(parse_git_branch)\$(parse_svn_branch) "
 export EDITOR=vim
+
+
+parse_git_branch () {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1] /'
+}
+
+PS1='\n╔═[\[\033[01;36m\]\A\[\033[01;00m\]]═[\[\033[01;32m\]\u\[\033[01;33m\]@\[\033[01;36m\]\h\[\033[01;00m\]]\n\[\033[01;00m\]╚═══\[\033[00;00m\]=\[\033[01;00m\]═[\[\033[01;36m\]\W\[\033[01;00m\]]$(parse_git_branch)\[\033[01;32m\]>> \[\033[00m\]'
+alias myip='curl http://checkip.dyndns.org -s -S| cut -d: -f2| cut -d\< -f 1'
+calc () { echo "$*" | bc -l; }
+alias l.="ls -d .*"
+alias ls="ls -hF -G -a -al"
+md () { mkdir -p "$1" && cd "$1"; }
+function ff() { find . -type f -iname '*'$*'*' -ls ; }
+function fe() { find . -type f -iname '*'${1:-}'*' -exec ${2:-file} {} \;  ; }
+export PATH='/usr/local/bin:/Users/stefan/Development/go/bin:/opt/local/bin:/usr/local/nginx:/usr/local/nginx/sbin':$PATH
+
+export PIP_REQUIRE_VIRTUALENV=true
+export PIP_RESPECT_VIRTUALENV=true
+export PKG_CONFIG_PATH=/Library/Frameworks/Mono.framework/Versions/Current/lib/pkgconfig/
+
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+export ARCHFLAGS="-arch x86_64"
+export ARCH_FLAGS="-arch x86_64"
+
+##
+# Your previous /Users/stefan/.profile file was backed up as /Users/stefan/.profile.macports-saved_2011-08-11_at_16:09:22
+##
+
+# MacPorts Installer addition on 2011-08-11_at_16:09:22: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+alias data="cd /Volumes/data"
+alias console="cd ~/Development/gq-console"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
