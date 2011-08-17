@@ -291,4 +291,11 @@ if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
 endif
 
+map <ESC>[H <Home>
+map <ESC>[F <End>
+imap <ESC>[H <C-O><Home>
+imap <ESC>[F <C-O><End>
+cmap <ESC>[H <Home>
+cmap <ESC>[F <End>
+
 autocmd BufWritePre *.yml,*.rst,*.py,*.java,*.js,*.html,*.c :%s/\s\+$//e
