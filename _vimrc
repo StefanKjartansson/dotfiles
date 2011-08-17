@@ -226,7 +226,7 @@ set incsearch               " Incrementally search while typing a /regex
 if has("gui_running")
     colorscheme solarized
 else
-    colorscheme torte
+    colorscheme dante
 endif
 
 " Paste from clipboard
