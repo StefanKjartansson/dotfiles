@@ -143,10 +143,8 @@ if [ -x "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
     PATH=/Applications/MacVim.app/Contents/MacOS/:$PATH
 fi
 
-PATH=/usr/local/sbin:$PATH:/usr/local/mysql/bin
+PATH=$PATH:/usr/local/mysql/bin
 export PATH
-
-
 
 PYTHONSTARTUP=~/.pythonrc.py
 export PYTHONSTARTUP
@@ -186,27 +184,20 @@ alias ls="ls -hF -G -a -al"
 md () { mkdir -p "$1" && cd "$1"; }
 function ff() { find . -type f -iname '*'$*'*' -ls ; }
 function fe() { find . -type f -iname '*'${1:-}'*' -exec ${2:-file} {} \;  ; }
-export PATH='/usr/local/bin:/Users/stefan/Development/go/bin:/opt/local/bin:/usr/local/nginx:/usr/local/nginx/sbin':$PATH
+export PATH='/opt/local/include:/usr/local/bin:/Users/stefan/Development/go/bin:/opt/local/bin:/usr/local/nginx:/usr/local/nginx/sbin':$PATH
 
 export PIP_REQUIRE_VIRTUALENV=true
 export PIP_RESPECT_VIRTUALENV=true
-export PKG_CONFIG_PATH=/Library/Frameworks/Mono.framework/Versions/Current/lib/pkgconfig/
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
 export ARCHFLAGS="-arch x86_64"
 export ARCH_FLAGS="-arch x86_64"
 
-##
-# Your previous /Users/stefan/.profile file was backed up as /Users/stefan/.profile.macports-saved_2011-08-11_at_16:09:22
-##
-
-# MacPorts Installer addition on 2011-08-11_at_16:09:22: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/include:/opt/local/sbin:$PATH
 
 alias data="cd /Volumes/data"
-alias console="cd ~/Development/gq-console"
+alias gq="cd ~/Development/GreenQloud"
+export CPPPATH="/opt/local/include/:$CPPPATH"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -214,3 +205,5 @@ export LANG=en_US.UTF-8
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
+
+alias tree="tree -I \"*.pyc\""
