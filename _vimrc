@@ -247,7 +247,6 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 " ==========================================================
 " Javascript
 " ==========================================================
-au BufRead *.js set makeprg=jslint\ %
 
 " Don't allow snipmate to take over tab
 autocmd VimEnter * ino <c-j> <c-r>=TriggerSnippet()<cr>
@@ -271,8 +270,6 @@ au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smart
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
-
-
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
@@ -298,4 +295,8 @@ imap <ESC>[F <C-O><End>
 cmap <ESC>[H <Home>
 cmap <ESC>[F <End>
 
-autocmd BufWritePre *.yml,*.rst,*.py,*.java,*.js,*.html,*.c :%s/\s\+$//e
+autocmd BufWritePre *.yml,*.rst,*.py,*.java,*.js,*.html,*.coffee,*.less,*.css,*.c :%s/\s\+$//e
+
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
