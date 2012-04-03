@@ -190,7 +190,7 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 export ARCHFLAGS="-arch x86_64"
 export ARCH_FLAGS="-arch x86_64"
-export CFLAGS="-isysroot /Developer/SDKs/MacOSX10.7.sdk -Wall"
+#export CFLAGS="-isysroot /Developer/SDKs/MacOSX10.7.sdk -Wall"
 
 export PATH=/opt/local/bin:/opt/local/include:/opt/local/sbin:$PATH
 
