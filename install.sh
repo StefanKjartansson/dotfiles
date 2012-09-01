@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 function link_file {
     source="${PWD}/$1"
     target="${HOME}/${1/_/.}"
@@ -30,5 +31,5 @@ git submodule foreach git submodule init
 git submodule foreach git submodule update
 
 #setup command-t
-#cd _vim/bundle/command-t
-#rake make
+cd _vim/bundle/command-t
+rake make
