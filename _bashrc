@@ -216,29 +216,9 @@ except NameError:
     echo "No manual entry or python module for $1") 2>/dev/null
 }
 
-cd()
-{
-    builtin cd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
-}
-
-pushd()
-{
-    builtin pushd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
-}
-
-popd()
-{
-    builtin popd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
-}              
-
-# Run ondir on login
-eval "`ondir /`"
-
-export DYLD_FALLBACK_LIBRARY_PATH=$DYLD_FALLBACK_LIBRARY_PATH:/opt/local/lib
 export HISTFILESIZE=10000 # Record last 10,000 commands
 export HISTSIZE=10000 # Record last 10,000 commands per sessioin
 
 alias tree="tree -I \"*.pyc\""
 alias pp='python -mjson.tool'
 alias grep="grep -rHni --color"
-alias data="cd /Volumes/data"
