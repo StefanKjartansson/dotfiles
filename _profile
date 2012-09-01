@@ -22,8 +22,3 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-if [ -d "$HOME/.gq_credentials" ] ; then
-    if [ -f "$HOME/.gq_credentials/rc" ]; then
-    . "$HOME/.gq_credentials/rc"
-    fi
-fi
