@@ -30,6 +30,8 @@ git submodule foreach git pull origin master
 git submodule foreach git submodule init
 git submodule foreach git submodule update
 
+vim +BundleInstall +qall
+
 #setup command-t
-cd _vim/bundle/command-t
+cd _vim/bundle/Command-T
 rake make

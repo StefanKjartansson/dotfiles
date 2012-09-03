@@ -127,6 +127,51 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-surround'
+
+Bundle 'scrooloose/nerdtree' 
+
+Bundle 'michaeljsmith/vim-indent-object'
+let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
+
+Bundle 'nathanaelkane/vim-indent-guides'
+
+" syntastic
+Bundle 'scrooloose/syntastic'
+
+" Snippets
+Bundle 'msanders/snipmate.vim'
+Bundle 'honza/snipmate-snippets'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+
+" JS
+Bundle 'pangloss/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'leshill/vim-json'
+Bundle 'itspriddle/vim-jquery'
+Bundle 'nono/vim-handlebars'
+Bundle 'mattn/zencoding-vim'
+
+" Colors
+Bundle 'altercation/vim-colors-solarized'
+
+Bundle "http://github.com/gmarik/snipmate.vim.git"
+Bundle "http://github.com/wincent/Command-T.git "
+
+" TXT - stuff
+Bundle 'timcharper/textile.vim'
+Bundle 'tpope/vim-markdown'
+
+" Servers
+Bundle 'mutewinter/nginx.vim'
+
+" CSS
+Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+Bundle 'groenewege/vim-less'
 
 
 " ==========================================================
@@ -252,11 +297,11 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 " ==========================================================
 
 " Don't allow snipmate to take over tab
-autocmd VimEnter * ino <c-j> <c-r>=TriggerSnippet()<cr>
+" autocmd VimEnter * ino <c-j> <c-r>=TriggerSnippet()<cr>
 " Use tab to scroll through autocomplete menus
-autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
-autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
-snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
+" autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
+" autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
+" snor <c-j> <esc>i<right><c-r>=TriggerSnippet()<cr>
 let g:acp_completeoptPreview=1
 
 " ===========================================================
