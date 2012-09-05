@@ -102,9 +102,6 @@ map <c-h> <c-w>h
 "  happen as if in command mode )
 imap <C-W> <C-O><C-W>
 
-" Open NerdTree
-map <leader>n :NERDTreeToggle<CR>
-
 " Run command-t file search
 map <leader>f :CommandT<CR>
 " Ack searching
@@ -161,6 +158,11 @@ Bundle 'mattn/zencoding-vim'
 " Colors
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'shawncplus/skittles_berry'
+
+" Python
+Bundle 'nvie/vim-flake8'
 
 Bundle "http://github.com/wincent/Command-T.git "
 
@@ -274,6 +276,7 @@ set incsearch               " Incrementally search while typing a /regex
 
 """" Display
 colorscheme tomorrow-night-bright
+set background=dark
 
 " Paste from clipboard
 map <leader>p "+gP
@@ -307,7 +310,7 @@ let g:acp_completeoptPreview=1
 " ============================================================
 " Mako/HTML
 autocmd BufNewFile,BufRead *.mako,*.mak setlocal ft=html
-autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,xhtml,xml,css,rb setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Python
 "au BufRead *.py compiler nose
@@ -346,3 +349,8 @@ autocmd BufWritePre *.yml,*.rst,*.py,*.java,*.js,*.html,*.coffee,*.less,*.css,*.
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+
+" Open NerdTree
+map <leader>n :NERDTreeToggle<CR>
+let NERDTreeDirArrows=0
+let NERDTreeIgnore = ['\.pyc$']

@@ -1,1 +1,1 @@
-/home/stebbi/Development/dotfiles/_vim
+/Users/stefanm/dotfiles/_vim
