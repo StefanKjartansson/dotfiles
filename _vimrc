@@ -273,11 +273,7 @@ set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
 """" Display
-if has("gui_running")
-    colorscheme Tomorrow-Night
-else
-    colorscheme dante
-endif
+colorscheme tomorrow-night-bright
 
 " Paste from clipboard
 map <leader>p "+gP
