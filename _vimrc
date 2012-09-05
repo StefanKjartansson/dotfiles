@@ -158,6 +158,7 @@ Bundle 'mattn/zencoding-vim'
 
 " Colors
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 Bundle "http://github.com/gmarik/snipmate.vim.git"
 Bundle "http://github.com/wincent/Command-T.git "
@@ -272,7 +273,7 @@ set incsearch               " Incrementally search while typing a /regex
 
 """" Display
 if has("gui_running")
-    colorscheme solarized
+    colorscheme Tomorrow-Night
 else
     colorscheme dante
 endif
