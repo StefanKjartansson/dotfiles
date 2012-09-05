@@ -143,8 +143,10 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " syntastic
 Bundle 'scrooloose/syntastic'
 
+Bundle 'rodjek/vim-puppet'
+
 " Snippets
-Bundle 'msanders/snipmate.vim'
+Bundle "http://github.com/gmarik/snipmate.vim.git"
 Bundle 'honza/snipmate-snippets'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 
@@ -160,7 +162,6 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
-Bundle "http://github.com/gmarik/snipmate.vim.git"
 Bundle "http://github.com/wincent/Command-T.git "
 
 " TXT - stuff
