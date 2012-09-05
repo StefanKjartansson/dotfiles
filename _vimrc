@@ -275,7 +275,7 @@ set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
 """" Display
-colorscheme tomorrow-night-bright
+colorscheme tomorrow-night
 set background=dark
 
 " Paste from clipboard
