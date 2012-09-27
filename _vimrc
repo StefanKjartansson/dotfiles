@@ -140,8 +140,6 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " syntastic
 Bundle 'scrooloose/syntastic'
 
-Bundle 'rodjek/vim-puppet'
-
 " Snippets
 Bundle "http://github.com/gmarik/snipmate.vim.git"
 Bundle 'honza/snipmate-snippets'
@@ -164,11 +162,10 @@ Bundle 'shawncplus/skittles_berry'
 " Python
 Bundle 'nvie/vim-flake8'
 
-Bundle "http://github.com/wincent/Command-T.git "
-
 " TXT - stuff
 Bundle 'timcharper/textile.vim'
 Bundle 'tpope/vim-markdown'
+Bundle 'rodjek/vim-puppet'
 
 " Servers
 Bundle 'mutewinter/nginx.vim'
@@ -177,6 +174,12 @@ Bundle 'mutewinter/nginx.vim'
 Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'groenewege/vim-less'
 
+" Navigation & stuff
+Bundle "http://github.com/wincent/Command-T.git "
+Bundle 'Shougo/neocomplcache'
+let g:neocomplcache_enable_at_startup = 1
+
+au BufNewFile,BufRead [vV]agrantfile        set filetype=ruby
 
 " ==========================================================
 " Basic Settings
@@ -275,7 +278,7 @@ set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
 """" Display
-colorscheme tomorrow-night
+colorscheme dante
 set background=dark
 
 " Paste from clipboard
