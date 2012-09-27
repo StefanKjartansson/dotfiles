@@ -174,6 +174,8 @@ Bundle 'mutewinter/nginx.vim'
 Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'groenewege/vim-less'
 
+Bundle 'jdonaldson/vaxe'
+
 " Navigation & stuff
 Bundle "http://github.com/wincent/Command-T.git "
 Bundle 'Shougo/neocomplcache'
