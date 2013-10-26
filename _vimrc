@@ -179,6 +179,9 @@ Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'groenewege/vim-less'
 
 Bundle 'jdonaldson/vaxe'
+Bundle 'jnwhiteh/vim-golang'
+
+Bundle 'wavded/vim-stylus'
 
 " Navigation & stuff
 Bundle "http://github.com/wincent/Command-T.git"
@@ -320,7 +323,7 @@ let g:acp_completeoptPreview=1
 " ============================================================
 " Mako/HTML
 autocmd BufNewFile,BufRead *.mako,*.mak setlocal ft=html
-autocmd FileType html,xhtml,xml,css,rb setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,xhtml,xml,css,rb,pp setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Python
 "au BufRead *.py compiler nose
@@ -354,7 +357,7 @@ imap <ESC>[F <C-O><End>
 cmap <ESC>[H <Home>
 cmap <ESC>[F <End>
 
-autocmd BufWritePre *.yml,*.go,*.rst,*.py,*.java,*.js,*.html,*.coffee,*.less,*.css,*.c :%s/\s\+$//e
+autocmd BufWritePre *.yml,*.go,*.rst,*.py,*.pp,*.java,*.js,*.html,*.coffee,*.less,*.css,*.c,*.styl,*.md :%s/\s\+$//e
 
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
