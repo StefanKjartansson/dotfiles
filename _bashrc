@@ -162,7 +162,6 @@ parse_svn_repository_root() {
   svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p'
 }
 
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 
 export EDITOR=vim
 
@@ -222,3 +221,10 @@ export HISTSIZE=10000 # Record last 10,000 commands per sessioin
 alias tree="tree -I \"*.pyc\""
 alias pp='python -mjson.tool'
 alias grep="grep -rHni --color"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export GOPATH=$HOME/Development/Golang/libs
+export PATH=$PATH:$GOPATH/bin
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
