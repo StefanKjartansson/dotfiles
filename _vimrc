@@ -129,6 +129,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-surround'
+Bundle 'wavded/vim-stylus'
 
 Bundle 'scrooloose/nerdtree' 
 
@@ -162,6 +163,9 @@ Bundle 'shawncplus/skittles_berry'
 " Python
 Bundle 'nvie/vim-flake8'
 
+" Golang
+Bundle 'jnwhiteh/vim-golang'
+
 " TXT - stuff
 Bundle 'timcharper/textile.vim'
 Bundle 'tpope/vim-markdown'
@@ -177,9 +181,10 @@ Bundle 'groenewege/vim-less'
 Bundle 'jdonaldson/vaxe'
 
 " Navigation & stuff
-Bundle "http://github.com/wincent/Command-T.git "
+Bundle "http://github.com/wincent/Command-T.git"
 Bundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1
+
 
 au BufNewFile,BufRead [vV]agrantfile        set filetype=ruby
 
@@ -349,7 +354,7 @@ imap <ESC>[F <C-O><End>
 cmap <ESC>[H <Home>
 cmap <ESC>[F <End>
 
-autocmd BufWritePre *.yml,*.rst,*.py,*.java,*.js,*.html,*.coffee,*.less,*.css,*.c :%s/\s\+$//e
+autocmd BufWritePre *.yml,*.go,*.rst,*.py,*.java,*.js,*.html,*.coffee,*.less,*.css,*.c :%s/\s\+$//e
 
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
