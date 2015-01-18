@@ -18,17 +18,10 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-export PIP_DOWNLOAD_CACHE=$HOME/Library/Caches/pip-downloads
 export JAVA_HOME=$(/usr/libexec/java_home)
-PATH="$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin"
+export PATH="$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin"
 export GOROOT=/usr/local/go
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 export ANDROID_HOME=/usr/local/opt/android-sdk
-PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
 export CDPATH=.:$GOPATH/src/github.com:$GOPATH/src/code.google.com/p:$GOPATH/src/bitbucket.org:$GOPATH/src/launchpad.net
