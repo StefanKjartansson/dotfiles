@@ -1,0 +1,10 @@
+alias grep="grep -rHni --color"
+alias jshi="pbpaste |highlight -O rtf --line-numbers --font-size 24 --font Inconsolata --style solarized-dark -W -J 50 -j 3 --src-lang js | pbcopy"
+alias l.="ls -d .*"
+alias ldeps="go list -f '{{join .Deps \"\n\"}}' |xargs go list -f '{{if not .Standard}}{{.ImportPath}}{{end}}'"
+alias ls="ls -hF -G -a -al"
+alias myip='curl http://checkip.dyndns.org -s -S| cut -d: -f2| cut -d\< -f 1'
+alias pp='python -mjson.tool'
+alias todo='find . -type f |parallel -k -j150% -n 1000 -m grep -I "TODO"'
+alias tree="tree -I \"*.pyc\""
+alias xmlpretty="pbpaste |xmllint --pretty 1 -|pbcopy"
