@@ -77,9 +77,6 @@ nmap <silent><Leader>tn <Esc>:Pytest next<CR>
 nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
 nmap <silent><Leader>te <Esc>:Pytest error<CR>
 
-" Run django tests
-map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
-
 " ,v brings up my .vimrc
 " ,V reloads it -- making all changes active (have to save first)
 map <leader>v :sp ~/.vimrc<CR><C-W>_
@@ -126,20 +123,22 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-surround'
-Bundle 'wavded/vim-stylus'
 
+
+Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree' 
 
 Bundle 'michaeljsmith/vim-indent-object'
 let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
-
 Bundle 'nathanaelkane/vim-indent-guides'
+
+Bundle 'Valloric/YouCompleteMe'
 
 " syntastic
 Bundle 'scrooloose/syntastic'
+" let g:syntastic_disabled_filetypes=["python", "go"]
+let g:syntastic_disabled_filetypes=["python"]
+let g:syntastic_python_checkers=['flake8']
 
 " Snippets
 Bundle "http://github.com/gmarik/snipmate.vim.git"
@@ -152,7 +151,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'nono/vim-handlebars'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mxw/vim-jsx'
+let g:syntastic_javascript_checkers = ['jsxhint']
 
 " Colors
 Bundle 'altercation/vim-colors-solarized'
@@ -162,9 +162,14 @@ Bundle 'shawncplus/skittles_berry'
 
 " Python
 Bundle 'nvie/vim-flake8'
+Bundle 'fisadev/vim-isort'
 
 " Golang
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
 
 " TXT - stuff
 Bundle 'timcharper/textile.vim'
@@ -178,15 +183,16 @@ Bundle 'mutewinter/nginx.vim'
 Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'groenewege/vim-less'
 
+" Haxe
 Bundle 'jdonaldson/vaxe'
-Bundle 'jnwhiteh/vim-golang'
 
 Bundle 'wavded/vim-stylus'
 
 " Navigation & stuff
 Bundle "http://github.com/wincent/Command-T.git"
-Bundle 'Shougo/neocomplcache'
-let g:neocomplcache_enable_at_startup = 1
+Bundle "bling/vim-airline"
+Bundle "tpope/vim-dispatch"
+Bundle "kien/ctrlp.vim"
 
 
 au BufNewFile,BufRead [vV]agrantfile        set filetype=ruby
@@ -327,7 +333,7 @@ autocmd FileType html,xhtml,xml,css,rb,pp setlocal expandtab shiftwidth=2 tabsto
 
 " Python
 "au BufRead *.py compiler nose
-au FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
@@ -360,8 +366,7 @@ cmap <ESC>[F <End>
 autocmd BufWritePre *.yml,*.go,*.rst,*.py,*.pp,*.java,*.js,*.html,*.coffee,*.less,*.css,*.c,*.styl,*.md :%s/\s\+$//e
 
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
