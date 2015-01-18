@@ -24,7 +24,17 @@
     untracked = cyan
 
 [push]
-    default = matching
+	default = current
 
 [core]
     editor = vim
+	excludesfile = $HOME/.gitignore_global
+[github]
+	user = StefanKjartansson
+[filter "media"]
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
+
+[alias]
+    cleanup = "!git branch --merged | grep 'feature' | xargs -n 1 git branch -d"
+	co = checkout
