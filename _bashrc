@@ -155,6 +155,11 @@ if [ -d /usr/local/heroku ]; then
     export PATH=PATH="/usr/local/heroku/bin:$PATH"
 fi
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
@@ -189,6 +194,14 @@ case $OS in
         export DOCKER_TLS_VERIFY=1
     fi
   
+    if [ -d "/Applications/Postgres.app/Contents/Versions/9.3/bin" ] ; then
+        export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+    fi
+
+    if [ -d "/Applications/Postgres.app/Contents/Versions/9.4/bin" ] ; then
+        export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+    fi
+
   ;;
 
 esac
