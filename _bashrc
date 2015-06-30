@@ -130,7 +130,12 @@ export EDITOR=vim
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-PS1="\[$(tput setaf 2)\][\u@\h \W \$ \[$(tput sgr0)\]"
+
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source $GITAWAREPROMPT/main.sh
+export PS1="\[\033[1;32m\]\u@\h \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+export SUDO_PS1="\[$bakred\]\u@\h\[$txtrst\] \w\$ "
+
 calc () { echo "$*" | bc -l; }
 md () { mkdir -p "$1" && cd "$1"; }
 function ff() { find . -type f -iname '*'$*'*' -ls ; }
@@ -144,11 +149,6 @@ export GOPATH=$HOME/Development/Golang/libs
 
 export PATH="/usr/local/include:/usr/local/bin:/opt/local/bin:/opt/local/include:/opt/local/sbin:$PATH"
 export PATH=$PATH:$GOPATH/bin
-
-# Add RVM to PATH for scripting
-if [ -d ~/.rvm ]; then
-    export PATH=$PATH:$HOME/.rvm/bin 
-fi
 
 # Add Heroku Toolbelt
 if [ -d /usr/local/heroku ]; then
@@ -208,3 +208,4 @@ case $OS in
 
 esac
 
+alias gclean='git branch --merged | \grep -v "^* master$" | \grep -v "^  master$"| \grep -v "develop"| \grep -v "\*"| xargs git branch -d'
