@@ -152,7 +152,7 @@ Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'nono/vim-handlebars'
 Bundle 'mxw/vim-jsx'
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Colors
 Bundle 'altercation/vim-colors-solarized'
@@ -366,7 +366,7 @@ cmap <ESC>[F <End>
 autocmd BufWritePre *.yml,*.go,*.rst,*.py,*.pp,*.java,*.js,*.html,*.coffee,*.less,*.css,*.c,*.styl,*.md :%s/\s\+$//e
 
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
